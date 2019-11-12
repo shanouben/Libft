@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: karibenn <karibenn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/11 14:28:27 by karibenn          #+#    #+#             */
-/*   Updated: 2019/11/12 19:42:11 by karibenn         ###   ########.fr       */
+/*   Created: 2019/11/12 18:04:42 by karibenn          #+#    #+#             */
+/*   Updated: 2019/11/12 19:42:55 by karibenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <string.h>
-#include <unistd.h>
-void    *ft_memcpy(void *dst, const void *src, size_t n)
+
+void    *ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
     size_t i;
     char *str;
-    char *zoo;
-    
+    char *str2;
+    char x;
+
+    i = -1;
+    x = (char)c;
     str = (char*)src;
-    zoo =(char*)dst;
-    i = 0;
-    if (str == NULL && zoo == NULL)
-      return (NULL);
-    while (i < n)
-    {
-        zoo[i] = str[i];
-        i++;
-    }
-    return((void*)zoo);
-} 
+    str2 = (char*)dest;
+    if (dest == NULL && src == NULL)
+        return (NULL);
+    while (++i < n)
+        {
+            str2[i] = str[i];
+            if (str[i] == x)
+                return ((void*)str2 + i + 1);
+        }
+    return (NULL);
+}

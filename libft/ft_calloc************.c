@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_calloc************.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: karibenn <karibenn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/11 13:46:41 by karibenn          #+#    #+#             */
-/*   Updated: 2019/11/11 19:01:23 by karibenn         ###   ########.fr       */
+/*   Created: 2019/11/12 15:52:30 by karibenn          #+#    #+#             */
+/*   Updated: 2019/11/12 18:03:37 by karibenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <stdlib.h>
 
-char		*ft_strrchr(const char *s, int c)
+void    *ft_calloc(size_t nmemb,size_t size )
 {
-	int i;
-	int y;
+    char *t;
+    int i;
+    i = 0;
+    if (nmemb == 0 || size == 0)
+        return (NULL);
+    if (!(t = malloc(sizeof(char) *(size + 1))))
+        return (0);
+    while (t[i])
+        
+}
 
-	i = 0;
-	y = -1;
-	if (c == '\0')
-		return ((char*)s + ft_strlen(s));
-	while (s[i])
-	{
-		if (c == s[i])
-			y = i;
-		i++;
-	}
-	if (y == -1)
-		return (NULL);
-	return ((char*)s + y);
+int main()
+{
+    printf("caca = %d\n", ft_calloc(2,3));
+    printf("avant calloc =%d\n" , calloc(2,3));
+    return (0);
 }

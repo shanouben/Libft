@@ -6,10 +6,11 @@
 /*   By: karibenn <karibenn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 15:28:05 by karibenn          #+#    #+#             */
-/*   Updated: 2019/11/11 12:27:51 by karibenn         ###   ########.fr       */
+/*   Updated: 2019/11/12 18:03:47 by karibenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <libft.h>
 #include <unistd.h>
 #include <string.h>
 #include <stdio.h>
@@ -26,5 +27,5 @@ size_t		ft_strlcpy(char *dst, const char *src, size_t size)
 		i++;
 	}
 	dst[i] = '\0';
-	return (strlen(src));
+	return (ft_strlen(src));
 }
