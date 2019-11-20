@@ -6,7 +6,7 @@
 #    By: karibenn <karibenn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 17:38:04 by karibenn          #+#    #+#              #
-#    Updated: 2019/11/12 19:48:35 by karibenn         ###   ########.fr        #
+#    Updated: 2019/11/20 21:03:31 by karibenn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,21 @@ SRCS = ft_atoi.c\
 	ft_tolower.c\
 	ft_toupper.c\
 	ft_memccpy.c\
+	ft_memchr.c\
+	ft_memcmp.c\
+	ft_calloc.c\
+	ft_memmove.c\
+	ft_strnstr.c\
+	ft_strlcat.c\
+	ft_itoa.c\
+	ft_substr.c\
+	ft_strjoin.c\
+	ft_strcpy.c\
+	ft_strcat.c\
+	ft_putchar_fd.c\
+	ft_putstr_fd.c\
+	ft_putendl_fd.c\
+	ft_putnbr_fd.c\
 
 all: $(NAME)
 
