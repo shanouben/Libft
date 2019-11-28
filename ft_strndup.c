@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: karibenn <karibenn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/05 12:30:42 by karibenn          #+#    #+#             */
-/*   Updated: 2019/11/28 15:23:34 by karibenn         ###   ########.fr       */
+/*   Created: 2019/11/23 17:32:48 by karibenn          #+#    #+#             */
+/*   Updated: 2019/11/28 15:35:20 by karibenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strndup(const char *str, size_t n)
 {
 	size_t	i;
+	char	*salut;
 
 	i = 0;
-	if (n == 0)
+	if (!(salut = (char *)malloc(sizeof(char) * (n + 1))))
 		return (0);
-	while ((i < n - 1) && (s1[i] || s2[i]))
+	while (i < n && str[i])
 	{
-		if (s1[i] != s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		salut[i] = str[i];
 		i++;
 	}
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	salut[i] = '\0';
+	return (salut);
 }

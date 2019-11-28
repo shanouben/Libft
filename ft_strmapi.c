@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: karibenn <karibenn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/05 12:30:42 by karibenn          #+#    #+#             */
-/*   Updated: 2019/11/28 15:23:34 by karibenn         ###   ########.fr       */
+/*   Created: 2019/11/21 18:20:40 by karibenn          #+#    #+#             */
+/*   Updated: 2019/11/21 18:49:37 by karibenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
+#include <stdlib.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	i;
+	char			*t;
+	unsigned int	i;
 
 	i = 0;
-	if (n == 0)
-		return (0);
-	while ((i < n - 1) && (s1[i] || s2[i]))
+	if (!s || !f)
+		return (NULL);
+	if (!(t = malloc(sizeof(char) * (ft_strlen(s) + 1))))
+		return (NULL);
+	while (s[i])
 	{
-		if (s1[i] != s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		t[i] = f(i, s[i]);
 		i++;
 	}
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	t[i] = '\0';
+	return (t);
 }

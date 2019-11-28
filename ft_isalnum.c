@@ -6,11 +6,13 @@
 /*   By: karibenn <karibenn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 11:04:08 by karibenn          #+#    #+#             */
-/*   Updated: 2019/11/11 11:54:51 by karibenn         ###   ########.fr       */
+/*   Updated: 2019/11/12 15:52:27 by karibenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isalnum(int c)
+#include "libft.h"
+
+int	ft_isalnum(int c)
 {
 	if (ft_isalpha(c) == 1 || ft_isdigit(c) == 1)
 		return (1);

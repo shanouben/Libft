@@ -6,11 +6,11 @@
 /*   By: karibenn <karibenn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 11:02:35 by karibenn          #+#    #+#             */
-/*   Updated: 2019/11/11 11:56:36 by karibenn         ###   ########.fr       */
+/*   Updated: 2019/11/11 19:03:31 by karibenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isdigit(int c)
+int	ft_isdigit(int c)
 {
 	if ((c <= 57 && c >= 48))
 		return (1);

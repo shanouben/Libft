@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: karibenn <karibenn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/05 12:30:42 by karibenn          #+#    #+#             */
-/*   Updated: 2019/11/28 15:23:34 by karibenn         ###   ########.fr       */
+/*   Created: 2019/11/12 19:49:57 by karibenn          #+#    #+#             */
+/*   Updated: 2019/11/21 14:44:06 by karibenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t	i;
+	size_t		i;
+	char		*t;
+	const char	*s;
 
-	i = 0;
-	if (n == 0)
-		return (0);
-	while ((i < n - 1) && (s1[i] || s2[i]))
+	t = (char *)dst;
+	s = (const char *)src;
+	i = 1;
+	if (dst == NULL && src == NULL)
+		return (NULL);
+	if (dst <= src)
 	{
-		if (s1[i] != s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		ft_memcpy(dst, src, len);
+		return (dst);
+	}
+	while (i <= len)
+	{
+		t[len - i] = s[len - i];
 		i++;
 	}
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	return ((void *)t);
 }

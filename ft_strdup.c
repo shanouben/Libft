@@ -6,10 +6,11 @@
 /*   By: karibenn <karibenn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 19:32:10 by karibenn          #+#    #+#             */
-/*   Updated: 2019/11/11 12:07:23 by karibenn         ###   ########.fr       */
+/*   Updated: 2019/11/11 19:01:04 by karibenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 
 char			*ft_strdup(const char *str)

@@ -1,34 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: karibenn <karibenn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/11 13:46:41 by karibenn          #+#    #+#             */
-/*   Updated: 2019/11/11 19:01:23 by karibenn         ###   ########.fr       */
+/*   Created: 2019/11/21 14:46:50 by karibenn          #+#    #+#             */
+/*   Updated: 2019/11/21 18:44:25 by karibenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <stdlib.h>
+#include "libft.h"
 
-char		*ft_strrchr(const char *s, int c)
+int		verif(char c, const char *s)
 {
-	int i;
-	int y;
+	int	i;
 
 	i = 0;
-	y = -1;
-	if (c == '\0')
-		return ((char*)s + ft_strlen(s));
 	while (s[i])
 	{
-		if (c == s[i])
-			y = i;
+		if (s[i] == c)
+			return (1);
 		i++;
 	}
-	if (y == -1)
+	return (0);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	char	*t;
+	int		i;
+	int		j;
+
+	i = 0;
+	if (!s1 || !set)
 		return (NULL);
-	return ((char*)s + y);
+	while (verif(s1[i], set) == 1)
+		i++;
+	j = ft_strlen(s1);
+	if (j != 0)
+		while (verif(s1[j - 1], set) == 1 && j != i)
+			j--;
+	return (t = ft_substr(s1, i, (j - i)));
 }
