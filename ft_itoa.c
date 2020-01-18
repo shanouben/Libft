@@ -6,14 +6,14 @@
 /*   By: karibenn <karibenn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/19 21:45:35 by karibenn          #+#    #+#             */
-/*   Updated: 2019/11/21 14:43:01 by karibenn         ###   ########.fr       */
+/*   Updated: 2019/11/19 22:31:21 by karibenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-int		count(int n)
+int	count(int n)
 {
 	int	c;
 
@@ -33,7 +33,7 @@ int		count(int n)
 
 char	*ft_itoa(int n)
 {
-	int		count2;
+	int	count2;
 	char	*t;
 
 	if (n == -2147483648)

@@ -6,7 +6,7 @@
 #    By: karibenn <karibenn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/11 17:38:04 by karibenn          #+#    #+#              #
-#    Updated: 2019/11/23 18:04:12 by karibenn         ###   ########.fr        #
+#    Updated: 2019/11/20 21:03:31 by karibenn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,10 +47,6 @@ SRCS = ft_atoi.c\
 	ft_putstr_fd.c\
 	ft_putendl_fd.c\
 	ft_putnbr_fd.c\
-	ft_strtrim.c\
-	ft_strmapi.c\
-	ft_split.c\
-	ft_strndup.c\
 
 all: $(NAME)
 
